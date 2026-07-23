@@ -487,14 +487,19 @@ Guwahati-781014
 </p>
 </div>
 
-   <form id="contactForm" action="https://formsubmit.co/your-email@email.com" method="POST" onsubmit="sendBoth(event)">
-    <input type="text" id="contact_name" name="name" placeholder="Your Name" required>
-    <input type="email" id="contact_email" name="email" placeholder="Your Email" required>
-    <input type="text" id="contact_phone" name="phone" placeholder="Phone Number" required>
-    <textarea id="contact_message" name="message" rows="5" placeholder="Your Message" required></textarea>
-    
+  <!-- FormSubmit will automatically redirect to WhatsApp after sending the email -->
+<form action="https://formsubmit.co/your-email@email.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <!-- Prevents captcha -->
     <input type="hidden" name="_captcha" value="false">
     
+    <!-- Redirects directly to WhatsApp after email submission -->
+    <input type="hidden" name="_next" value="https://wa.me/917099936966?text=Hello%20Matu%20Computer%20Centre,%20I%20have%20submitted%20a%20new%20enquiry.">
+
     <button type="submit" style="background:#0d47a1; color:white; padding:15px; width:100%; border:none; font-size:18px; border-radius:5px; cursor:pointer;">
         <i class="fas fa-paper-plane"></i> Send Message
     </button>
