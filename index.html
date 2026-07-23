@@ -487,14 +487,46 @@ Guwahati-781014
 </p>
 </div>
 
-<form action="https://formsubmit.co/djitumoni075@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="phone" placeholder="Phone Number" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+   <input type="text" id="contact_name" name="name" placeholder="Your Name" required>
+    <input type="email" id="contact_email" name="email" placeholder="Your Email" required>
+    <input type="text" id="contact_phone" name="phone" placeholder="Phone Number" required>
+    <textarea id="contact_message" name="message" rows="5" placeholder="Your Message" required></textarea>
+    
     <input type="hidden" name="_captcha" value="false">
-    <button type="submit">Send Message</button>
+    
+    <button type="submit" style="background:#0d47a1; color:white; padding:15px; width:100%; border:none; font-size:18px; border-radius:5px; cursor:pointer;">
+        <i class="fas fa-paper-plane"></i> Send Message
+    </button>
 </form>
+
+<!-- Dono jagah bhejne ka JavaScript Code -->
+<script>
+function sendBoth() {
+    // Form se data nikalna
+    var name = document.getElementById("contact_name").value;
+    var email = document.getElementById("contact_email").value;
+    var phone = document.getElementById("contact_phone").value;
+    var msg = document.getElementById("contact_message").value;
+
+    // Aapka WhatsApp Number
+    var whatsappNumber = "917099936966"; 
+
+    // WhatsApp Message ka Format
+    var whatsappText = "Hello Matu Computer Centre, I have a new enquiry:%0A%0A" +
+                       "Name: " + name + "%0A" +
+                       "Email: " + email + "%0A" +
+                       "Phone: " + phone + "%0A" +
+                       "Message: " + msg;
+
+    var waLink = "https://wa.me/" + whatsappNumber + "?text=" + whatsappText;
+
+    // Time delay (Aadha second): Pehle email wala form submit hone denge, uske turant baad WhatsApp open karenge
+    setTimeout(function() {
+        window.location.href = waLink;
+    }, 500);
+}
+</script>
+<!-- Dual Form Ends Here -->
 </div>
 </section>
 
