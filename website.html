@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matu Computer Centre</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+body{
+background:#f4f7fb;
+color:#333;
+line-height:1.6;
+}
+header{
+background:#0d47a1;
+color:white;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+.logo{
+display:flex;
+align-items:center;
+}
+.logo img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #ffffff;
+margin-right:15px;
+}
+.logo h2{
+font-size:28px;
+}
+nav a{
+text-decoration:none;
+color:white;
+margin-left:20px;
+font-weight:bold;
+transition:.3s;
+}
+nav a:hover{
+color:#ffd600;
+}
+.hero{
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("images/gallery.jpeg");
+background-size:cover;
+background-position:center;
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
+.hero p{
+font-size:20px;
+margin-bottom:25px;
+}
+.btn{
+background:#e53935;
+color:white;
+padding:15px 30px;
+text-decoration:none;
+border-radius:30px;
+font-size:18px;
+transition:.4s;
+}
+.btn:hover{
+background:#1565c0;
+}
+section{
+padding:70px 8%;
+}
+.title, .section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:50px;
+color:#0d47a1;
+}
+.section-title p{
+font-size:16px;
+color:#555;
+margin-top: -35px;
+margin-bottom: 40px;
+}
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+.about img{
+width:100%;
+border-radius:10px;
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-10px);
+}
+.card i{
+font-size:40px;
+color:#e53935;
+margin-bottom:20px;
+}
+/* Fee Section Styling */
+.fee-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.fee-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+position:relative;
+transition:.4s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+.fee-card:hover{
+transform:translateY(-10px);
+}
+.fee-card.popular{
+border:2px solid #e53935;
+}
+.badge{
+position:absolute;
+top:15px;
+right:15px;
+background:#e53935;
+color:white;
+padding:3px 10px;
+font-size:12px;
+border-radius:20px;
+}
+.fee-card h3{
+font-size:20px;
+margin-bottom:10px;
+color:#0d47a1;
+}
+.fee-card .duration{
+font-size:14px;
+color:#666;
+margin-bottom:15px;
+}
+.fee-card ul{
+list-style:none;
+margin-bottom:20px;
+}
+.fee-card ul li{
+font-size:14px;
+margin-bottom:8px;
+color:#444;
+}
+.fee-card h1{
+font-size:28px;
+color:#e53935;
+margin-bottom:15px;
+}
+.fee-btn{
+background:#0d47a1;
+color:white;
+padding:10px 20px;
+text-align:center;
+text-decoration:none;
+border-radius:5px;
+transition:.3s;
+display:block;
+}
+.fee-btn:hover{
+background:#e53935;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+transition:.4s;
+}
+.gallery img:hover{
+transform:scale(1.05);
+}
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+form input,
+form textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:6px;
+}
+form button{
+background:#0d47a1;
+color:white;
+padding:15px;
+width:100%;
+border:none;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+}
+footer{
+background:#0d47a1;
+color:white;
+padding:25px;
+text-align:center;
+margin-top:50px;
+}
+@media(max-width:768px){
+.about,
+.contact{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:36px;
+}
+nav{
+display:none;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<img src="images/logo.jpeg" alt="Logo">
+<div>
+<h2>Matu Computer Centre</h2>
+<small>Hardware & Software Training</small>
+</div>
+</div>
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Matu Computer Centre</h1>
+<p>Computer Training | Hardware | Printing | Online Services</p>
+<a href="#courses" class="btn">Explore Courses</a>
+</div>
+</section>
+
+<section id="about">
+<h2 class="title">About Us</h2>
+<div class="about">
+<img src="images/about.jpeg" alt="About Image">
+<div>
+<h2>Welcome to Matu Computer Centre</h2>
+<p>
+<b>Matu Computer Centre provides quality computer education,
+hardware training, printing services, online applications,
+PAN services, passport photos, lamination and many other
+digital services.</b>
+</p>
+<br>
+<p>
+Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwahati-14
+</p>
+</div>
+</div>
+</section>
+
+<section id="courses">
+<h2 class="title">Our Courses</h2>
+<div class="cards">
+<div class="card"><i class="fas fa-desktop"></i><h3>Computer Awareness</h3><p>Windows, MS Office, Internet</p></div>
+<div class="card"><i class="fas fa-code"></i><h3>C Language</h3></div>
+<div class="card"><i class="fas fa-laptop-code"></i><h3>C++ Programming</h3></div>
+<div class="card"><i class="fab fa-html5"></i><h3>HTML</h3></div>
+<div class="card"><i class="fas fa-calculator"></i><h3>Tally Accounting</h3></div>
+<div class="card"><i class="fas fa-image"></i><h3>DTP</h3></div>
+<div class="card"><i class="fas fa-globe"></i><h3>Internet Applications</h3></div>
+<div class="card"><i class="fas fa-tools"></i><h3>Diploma in Computer Hardware</h3></div>
+</div>
+</section>
+
+<section id="course-fees">
+    <div class="section-title">
+        <h2>Our Course Fees</h2>
+   
+    </div>
+
+    <div class="fee-container">
+        <div class="fee-card">
+            <h3>Computer Awareness</h3>
+            <p class="duration">Duration: 3 Months</p>
+            <ul>
+                <li>✔ Windows</li>
+                <li>✔ MS Office</li>
+                <li>✔ Internet</li>
+                <li>✔ Certificate</li>
+            </ul>
+            <h1>₹1500</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+
+        <div class="fee-card">
+            <h3>DTP</h3>
+            <p class="duration">Duration: 2 Months</p>
+            <ul>
+                <li>✔ Corel Draw</li>
+                <li>✔ Pagemaker</li>
+                <li>✔ Certificate</li>
+            </ul>
+            <h1>₹1800</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+
+        <div class="fee-card">
+            <h3>Internet Application</h3>
+            <p class="duration">Duration: 1 Month</p>
+            <ul>
+                <li>✔ Web Browsing</li>
+                <li>✔ Portal Forms</li>
+            </ul>
+            <h1>₹1000</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+
+        <div class="fee-card popular">
+            <span class="badge">Popular</span>
+            <h3>Tally Accounting</h3>
+            <p class="duration">Duration: 3 Months</p>
+            <ul>
+                <li>✔ GST</li>
+                <li>✔ Payroll</li>
+                <li>✔ Practical Training</li>
+                <li>✔ Certificate</li>
+            </ul>
+            <h1>₹1800</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+
+        <div class="fee-card">
+            <h3>C Programming</h3>
+            <p class="duration">Duration: 2 Months</p>
+            <ul>
+                <li>✔ Programming Basics</li>
+                <li>✔ Practical Lab</li>
+                <li>✔ Projects</li>
+                <li>✔ Certificate</li>
+            </ul>
+            <h1>₹2000</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+
+        <div class="fee-card">
+            <h3>C++ Programming</h3>
+            <p class="duration">Duration: 2 Months</p>
+            <ul>
+                <li>✔ OOP Concepts</li>
+                <li>✔ Practical</li>
+                <li>✔ Projects</li>
+                <li>✔ Certificate</li>
+            </ul>
+            <h1>₹3,000</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+
+        <div class="fee-card">
+            <h3>HTML/DHTML</h3>
+            <p class="duration">Duration: 2 Months</p>
+            <ul>
+                <li>✔ HTML</li>
+                <li>✔ Certificate</li>
+            </ul>
+            <h1>₹1500</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+
+        <div class="fee-card">
+            <h3>Diploma in Computer Hardware</h3>
+            <p class="duration">Duration: 12 Months</p>
+            <ul>
+                <li>✔ Laptop Repair</li>
+                <li>✔ Desktop Repair</li>
+                <li>✔ Networking</li>
+                <li>✔ Internship</li>
+            </ul>
+            <h1>₹1600</h1>
+            <a href="#contact" class="fee-btn">Enroll Now</a>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+<h2 class="title">Services</h2>
+<div class="cards">
+<div class="card"><i class="fas fa-print"></i><h3>Printing</h3></div>
+<div class="card"><i class="fas fa-copy"></i><h3>Xerox</h3></div>
+<div class="card"><i class="fas fa-camera"></i><h3>Passport Photo</h3></div>
+<div class="card"><i class="fas fa-id-card"></i><h3>PAN Card, Voter Card</h3></div>
+<div class="card"><i class="fas fa-id-card"></i><h3>Aadhar Card (Coming Soon)</h3></div>
+<div class="card"><i class="fas fa-id-card"></i><h3>Driving License, Insurance</h3></div>
+<div class="card"><i class="fas fa-wifi"></i><h3>Online Apply</h3></div>
+<div class="card"><i class="fas fa-file"></i><h3>Lamination</h3></div>
+<div class="card"><i class="fas fa-laptop"></i><h3>Laptop Repair</h3></div>
+<div class="card"><i class="fas fa-desktop"></i><h3>Computer Service</h3></div>
+</div>
+</section>
+
+<section id="gallery">
+<h2 class="title">Gallery</h2>
+<div class="gallery">
+<img src="images/courses.jpeg" alt="Courses Gallery">
+<img src="images/form.jpeg" alt="Form Gallery">
+</div>
+</section>
+
+<section id="contact">
+<h2 class="title">Contact Us</h2>
+<div class="contact">
+<div>
+<h3>Matu Computer Centre</h3>
+<p>
+Ahmed Market<br>
+Near Govt. Ayurvedic College<br>
+AEC Road<br>
+Jalukbari<br>
+Guwahati-781014
+</p>
+<br>
+
+<!-- Clickable Phone and WhatsApp with Icons -->
+<p>
+    <b><i class="fas fa-phone-alt" style="color: #0d47a1; margin-right: 5px;"></i> Phone Number:</b> 
+    <a href="tel:+918638835058" style="text-decoration: none; color: #333; font-weight: bold;">8638835058</a>
+</p>
+<p>
+    <b><i class="fab fa-whatsapp" style="color: #25D366; margin-right: 5px; font-size: 18px;"></i> WhatsApp Number:</b> 
+    <a href="https://wa.me/917099936966" target="_blank" style="text-decoration: none; color: #333; font-weight: bold;">7099936966</a>
+</p>
+<br>
+
+<p>
+<b><i class="fas fa-clock" style="color: #0d47a1; margin-right: 5px;"></i> Opening Hours</b><br>
+9:00 AM - 9:00 PM
+</p>
+</div>
+
+<form action="https://formsubmit.co/djitumoni075@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+
+<footer>
+<h3>Matu Computer Centre</h3>
+<p>Computer Training | Hardware | Printing | Online Services</p>
+<br>
+<p>© 2026 Matu Computer Centre. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
