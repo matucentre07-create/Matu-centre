@@ -487,18 +487,18 @@ Guwahati-781014
 </p>
 </div>
 
-   <input type="text" id="contact_name" name="name" placeholder="Your Name" required>
+   <form action="https://formsubmit.co/your-email@email.com" method="POST" onsubmit="sendBoth()">
+    <input type="text" id="contact_name" name="name" placeholder="Your Name" required>
     <input type="email" id="contact_email" name="email" placeholder="Your Email" required>
     <input type="text" id="contact_phone" name="phone" placeholder="Phone Number" required>
     <textarea id="contact_message" name="message" rows="5" placeholder="Your Message" required></textarea>
     
     <input type="hidden" name="_captcha" value="false">
     
-    <button type="submit" style="background:#0d47a1; color:white; padding:15px; width:100%; border:none; font-size:18px; border-radius:5px; cursor:pointer;">
+    <button type="submit">
         <i class="fas fa-paper-plane"></i> Send Message
     </button>
 </form>
-
 <!-- Dono jagah bhejne ka JavaScript Code -->
 <script>
 function sendBoth() {
