@@ -972,23 +972,30 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
 
     <button type="submit"
         style="width:100%;padding:15px;background:#007 bff;color:blue;border:none;border-radius:8px; font-size:18px;cursor:pointer;">Send Message</button>
-    <button type="button" onclick="sendWhatsApp()" style="margin-top:10px;background:#25D366;color:white;padding:15px;width:100%;"></button>
-       
-        <i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
-    
+    <button type="button" onclick="sendWhatsApp()" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+</button>
         <script>
 function sendWhatsApp() {
+
     let name = document.querySelector('input[name="name"]').value;
     let email = document.querySelector('input[name="email"]').value;
     let phone = document.querySelector('input[name="phone"]').value;
     let message = document.querySelector('textarea[name="message"]').value;
-    let text = 
-        `Name: ${name}
-        Email:${email}
-        Phone:${phone}
-        Message:${message}`;
-    let url= "https://wa.me/917099936966?text="+encodeURIComponenet(text);
-    window.open(url,"_blank");
+
+    let text =
+`*New Website Enquiry*
+
+*Name:* ${name}
+*Email:* ${email}
+*Phone:* ${phone}
+
+*Message:*
+${message}`;
+
+    let url = "https://wa.me/917099936966?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
 }
     </script>
 
