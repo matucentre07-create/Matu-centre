@@ -3,20 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matu Computer Centre | Computer Training Institute in Jalukbari, Guwahati</title>
-
-<meta name="description" content="Matu Computer Centre provides Computer Training, Hardware Courses, Tally, DTP, Printing, Online Services, PAN Card, Passport Photos, and Computer Repair in Jalukbari, Guwahati.">
-
-<meta name="keywords" content="Matu Computer Centre, Computer Institute Guwahati, Computer Training Jalukbari, Tally Course Guwahati, Hardware Training, DTP, Computer Centre Assam">
-
-<meta name="author" content="Matu Computer Centre">
-
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="Matu Computer Centre">
-<meta property="og:description" content="Computer Training, Hardware Courses, Printing & Online Services in Guwahati">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://matucentre07-create.github.io/Matu-centar/">
+<title>Matu Computer Centre</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *{
@@ -29,6 +16,7 @@ body{
 background:#f4f7fb;
 color:#333;
 line-height:1.6;
+transition: background 0.4s, color 0.4s;
 }
 header{
 background:#0d47a1;
@@ -56,6 +44,10 @@ margin-right:15px;
 .logo h2{
 font-size:28px;
 }
+nav {
+display: flex;
+align-items: center;
+}
 nav a{
 text-decoration:none;
 color:white;
@@ -66,6 +58,75 @@ transition:.3s;
 nav a:hover{
 color:#ffd600;
 }
+
+/* Dark Mode Toggle Switch Styling */
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 76px;
+    margin-left: 20px;
+}
+.theme-switch input {
+    display: none;
+}
+.slider {
+    background-color: #fff;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.slider .fa-sun {
+    color: #f39c12;
+    font-size: 15px;
+    opacity: 0; 
+    transition: 0.4s;
+    z-index: 1;
+}
+.slider .fa-moon {
+    color: #777;
+    font-size: 15px;
+    opacity: 1; 
+    transition: 0.4s;
+    z-index: 1;
+}
+.slider:before {
+    background-color: #ccc;
+    bottom: 2px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+    z-index: 2;
+}
+input:checked + .slider {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+input:checked + .slider:before {
+    transform: translateX(38px);
+    background-color: #fff;
+}
+input:checked + .slider .fa-sun {
+    opacity: 1; 
+}
+input:checked + .slider .fa-moon {
+    opacity: 0; 
+}
+
 .hero{
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url("images/gallery.jpeg");
@@ -114,6 +175,72 @@ color:#555;
 margin-top: -35px;
 margin-bottom: 40px;
 }
+
+/* =========================================
+   SECURITY & PROTECTION (No Select)
+   ========================================= */
+.no-select-copy {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* =========================================
+   LATEST UPDATES & DOCUMENTS (SCROLLING)
+   ========================================= */
+.updates-section {
+    padding: 30px 8%;
+}
+.updates-section .section-title {
+    margin-bottom: 20px; /* Reduced gap */
+}
+.updates-section .section-title h2 {
+    font-size: 26px; /* Chota kiya gaya size */
+}
+.scrolling-container {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100px; /* Box ka height chota kiya */
+    overflow: hidden; 
+    position: relative;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+.scrolling-list {
+    position: absolute;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: scrollUp 10s linear infinite; 
+}
+.scrolling-list:hover {
+    animation-play-state: paused;
+}
+.scrolling-list li {
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.scrolling-list li a {
+    color: #0033cc;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+}
+.scrolling-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Animation Keyframes */
+@keyframes scrollUp {
+    0% { top: 100%; }
+    100% { top: -100%; }
+}
+
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -144,6 +271,7 @@ font-size:40px;
 color:#e53935;
 margin-bottom:20px;
 }
+
 /* Fee Section Styling */
 .fee-container{
 display:grid;
@@ -178,41 +306,155 @@ font-size:12px;
 border-radius:20px;
 }
 .fee-card h3{
-font-size:20px;
+font-size:22px;
 margin-bottom:10px;
 color:#0d47a1;
 }
 .fee-card .duration{
 font-size:14px;
 color:#666;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 .fee-card ul{
 list-style:none;
 margin-bottom:20px;
+flex-grow: 1;
 }
 .fee-card ul li{
 font-size:14px;
-margin-bottom:8px;
+margin-bottom:10px;
 color:#444;
 }
 .fee-card h1{
-font-size:28px;
+font-size:32px;
 color:#e53935;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 .fee-btn{
 background:#0d47a1;
 color:white;
-padding:10px 20px;
+padding:12px 20px;
 text-align:center;
 text-decoration:none;
 border-radius:5px;
 transition:.3s;
 display:block;
+width: 100%;
+font-size: 16px;
 }
 .fee-btn:hover{
-background:#e53935;
+background:#093375;
+}
+
+/* Employee Directory Styling */
+.employee-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.show-directory-btn {
+    background: #0d47a1;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+.show-directory-btn:hover {
+    background: #e53935;
+}
+.directory-content {
+    display: none; 
+    text-align: left;
+}
+.search-bar {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #0d47a1;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    background: white;
+}
+.search-bar:focus {
+    outline: none;
+    border-color: #e53935;
+}
+.table-responsive {
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+.employee-table th, .employee-table td {
+    padding: 18px 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+.employee-table th {
+    background-color: #0d47a1;
+    color: white;
+    font-weight: bold;
+}
+.employee-table tr:hover {
+    background-color: #f9f9f9;
+}
+.emp-dp {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0d47a1;
+}
+
+/* Downloads Section Styling */
+.downloads-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+.download-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.download-item .main-icon {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.download-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+.download-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+.download-links a {
+    text-decoration: none;
+    color: #0000EE;
+    font-size: 16px;
+    margin-right: 15px;
+}
+.download-links a:hover {
+    text-decoration: underline;
 }
 
 .gallery{
@@ -235,6 +477,13 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 }
+.contact-info p {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+.contact-info i {
+    width: 25px;
+}
 form input,
 form textarea{
 width:100%;
@@ -242,8 +491,9 @@ padding:15px;
 margin:10px 0;
 border:1px solid #ccc;
 border-radius:6px;
+background: white;
 }
-form button{
+.submit-btn {
 background:#0d47a1;
 color:white;
 padding:15px;
@@ -252,13 +502,99 @@ border:none;
 font-size:18px;
 border-radius:5px;
 cursor:pointer;
+transition: .3s;
+}
+.submit-btn:hover {
+background:#093375;
+}
+.whatsapp-btn {
+background:#25D366;
+color:white;
+padding:15px;
+width:100%;
+border:none;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+display: block;
+text-align: center;
+text-decoration: none;
+margin-top: 10px;
+transition: .3s;
+}
+.whatsapp-btn:hover {
+background:#1ebe59;
+}
+.feedback-section {
+    background: #e9eff5;
+    text-align: center;
+    padding: 50px 8%;
 }
 footer{
 background:#0d47a1;
 color:white;
 padding:25px;
 text-align:center;
-margin-top:50px;
+}
+
+/* =========================================
+   DARK MODE STYLES
+   ========================================= */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+body.dark-mode .card,
+body.dark-mode .fee-card,
+body.dark-mode .download-item,
+body.dark-mode .table-responsive,
+body.dark-mode .search-bar,
+body.dark-mode .scrolling-container,
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background: #1e1e1e;
+    color: #ffffff;
+    border-color: #333;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+}
+body.dark-mode .employee-table td {
+    border-bottom: 1px solid #333;
+}
+body.dark-mode .employee-table tr:hover {
+    background-color: #2c2c2c;
+}
+body.dark-mode .title, 
+body.dark-mode .section-title h2,
+body.dark-mode .fee-card h3,
+body.dark-mode h2 {
+    color: #90caf9;
+}
+body.dark-mode .fee-card .duration,
+body.dark-mode .fee-card ul li,
+body.dark-mode .download-item p,
+body.dark-mode .download-item .main-icon,
+body.dark-mode p {
+    color: #b0b0b0;
+}
+body.dark-mode .download-item h3 {
+    color: #e0e0e0;
+}
+body.dark-mode .contact-info a,
+body.dark-mode .download-links a {
+    color: #64b5f6 !important;
+}
+body.dark-mode .scrolling-list li {
+    border-color: #444;
+}
+body.dark-mode .scrolling-list li a {
+    color: #64b5f6;
+}
+body.dark-mode .feedback-section {
+    background: #1a1a1a;
+}
+
+@media(max-width:1024px){
+    nav a { margin-left: 10px; font-size: 14px; }
 }
 @media(max-width:768px){
 .about,
@@ -269,77 +605,12 @@ grid-template-columns:1fr;
 font-size:36px;
 }
 nav{
-display:none;
+display:none; 
 }
-}
-    .employee-search{
-width:100%;
-padding:15px;
-font-size:17px;
-margin-bottom:25px;
-border:2px solid #0d47a1;
-border-radius:8px;
-outline:none;
-}
-
-.employee-table{
-width:100%;
-border-collapse:collapse;
-background:#fff;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-overflow:hidden;
-border-radius:10px;
-}
-
-.employee-table th{
-background:#0d47a1;
-color:#fff;
-padding:15px;
-}
-
-.employee-table td{
-padding:15px;
-border-bottom:1px solid #ddd;
-text-align:center;
-}
-
-.employee-table tr:hover{
-background:#f2f7ff;
-}
-
-.download-area{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.download-area a{
-background:#0d47a1;
-color:#fff;
-padding:14px 25px;
-text-decoration:none;
-border-radius:6px;
-transition:.3s;
-}
-
-.download-area a:hover{
-background:#e53935;
-}
-
-@media(max-width:900px){
-
-.employee-table{
-display:block;
-overflow-x:auto;
-white-space:nowrap;
-}
-
 }
 </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
 <header>
 <div class="logo">
@@ -355,9 +626,18 @@ white-space:nowrap;
 <a href="#courses">Courses</a>
 <a href="#services">Services</a>
 <a href="#gallery">Gallery</a>
-    <a href="#downloads">Downloads</a>
+<a href="#downloads">Downloads</a>
 <a href="#contact">Contact</a>
-    <a href="#employee">Employees</a>
+<a href="#employees">Employees</a>
+
+<!-- Toggle Switch Button for Dark Mode -->
+<label class="theme-switch" for="darkModeSwitch" title="Toggle Dark Mode">
+    <input type="checkbox" id="darkModeSwitch">
+    <div class="slider round">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </div>
+</label>
 </nav>
 </header>
 
@@ -367,6 +647,18 @@ white-space:nowrap;
 <p>Computer Training | Hardware | Printing | Online Services</p>
 <a href="#courses" class="btn">Explore Courses</a>
 </div>
+</section>
+
+<!-- LATEST UPDATES & DOCUMENTS SECTION (Resized) -->
+<section id="updates" class="updates-section no-select-copy">
+    <div class="section-title">
+        <h2 style="color: #0d47a1;">Latest Updates & Documents</h2>
+    </div>
+    <div class="scrolling-container">
+        <ul class="scrolling-list">
+            <li><a href="#">New updates and documents will appear here.</a></li>
+        </ul>
+    </div>
 </section>
 
 <section id="about">
@@ -395,18 +687,20 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
 <div class="card"><i class="fas fa-desktop"></i><h3>Computer Awareness</h3><p>Windows, MS Office, Internet</p></div>
 <div class="card"><i class="fas fa-code"></i><h3>C Language</h3></div>
 <div class="card"><i class="fas fa-laptop-code"></i><h3>C++ Programming</h3></div>
-<div class="card"><i class="fab fa-html5"></i><h3>HTML</h3></div>
+<div class="card"><i class="fab fa-html5"></i><h3>HTML/DHTML</h3></div>
 <div class="card"><i class="fas fa-calculator"></i><h3>Tally Accounting</h3></div>
 <div class="card"><i class="fas fa-image"></i><h3>DTP</h3></div>
 <div class="card"><i class="fas fa-globe"></i><h3>Internet Applications</h3></div>
 <div class="card"><i class="fas fa-tools"></i><h3>Diploma in Computer Hardware</h3></div>
+<!-- Added Missing Courses -->
+<div class="card"><i class="fas fa-graduation-cap"></i><h3>PGDCA</h3></div>
+<div class="card"><i class="fas fa-certificate"></i><h3>DCA</h3></div>
 </div>
 </section>
 
 <section id="course-fees">
     <div class="section-title">
         <h2>Our Course Fees</h2>
-   
     </div>
 
     <div class="fee-container">
@@ -422,7 +716,6 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹2000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-
         <div class="fee-card">
             <h3>DTP</h3>
             <p class="duration">Duration: 2 Months</p>
@@ -434,7 +727,6 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹3000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-
         <div class="fee-card">
             <h3>Internet Application</h3>
             <p class="duration">Duration: 1 Month</p>
@@ -445,7 +737,6 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹1500</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-
         <div class="fee-card popular">
             <span class="badge">Popular</span>
             <h3>Tally Accounting</h3>
@@ -459,7 +750,6 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹3000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-
         <div class="fee-card">
             <h3>C Programming</h3>
             <p class="duration">Duration: 2 Months</p>
@@ -472,7 +762,6 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹2000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-
         <div class="fee-card">
             <h3>C++ Programming</h3>
             <p class="duration">Duration: 2 Months</p>
@@ -485,7 +774,6 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹3,000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-
         <div class="fee-card">
             <h3>HTML/DHTML</h3>
             <p class="duration">Duration: 2 Months</p>
@@ -496,7 +784,6 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹2000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-
         <div class="fee-card">
             <h3>Diploma in Computer Hardware</h3>
             <p class="duration">Duration: 12 Months</p>
@@ -509,18 +796,19 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
             <h1>₹5000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-         <div class="fee-card">
+        <div class="fee-card">
             <h3>PGDCA</h3>
             <p class="duration">Duration: 12 Months</p>
+            <ul>
             </ul>
             <h1>₹10000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
-         <div class="fee-card">
+        <div class="fee-card">
             <h3>DCA</h3>
             <p class="duration">Duration: 12 Months</p>
-            
-           
+            <ul>
+            </ul>
             <h1>₹5000</h1>
             <a href="#contact" class="fee-btn">Enroll Now</a>
         </div>
@@ -543,6 +831,104 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
 </div>
 </section>
 
+<section id="employees">
+    <h2 class="title" style="margin-bottom: 30px;">Employee Directory</h2>
+    <div class="employee-container">
+        <button class="show-directory-btn" id="toggleDirectoryBtn">Show Employee List</button>
+        <div class="directory-content" id="directorySection">
+            <input type="text" class="search-bar" id="searchEmployee" placeholder="Search Employee...">
+            <div class="table-responsive">
+                <table class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>Profile</th>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Mobile</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeList">
+                        <tr>
+                            <td><img src="https://ui-avatars.com/api/?name=Latika+Baishya&background=0d47a1&color=fff&rounded=true" alt="DP" class="emp-dp"></td>
+                            <td>EMP001</td>
+                            <td>Latika Baishya</td>
+                            <td>Proprietor</td>
+                            <td>9864944414</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://ui-avatars.com/api/?name=Dipanjali+Kumari&background=e53935&color=fff&rounded=true" alt="DP" class="emp-dp"></td>
+                            <td>EMP002</td>
+                            <td>Dipanjali Kumari</td>
+                            <td>DTP Operator</td>
+                            <td>8099646022</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/pd.jpeg" style="width:50px;height:50px; border-radius:50%; object-fit:cover;"></td>
+                            <td>EMP003</td>
+                            <td>Pritam Das</td>
+                            <td>Receiption cum Management</td>
+                            <td></td>
+                            <td>pd398027@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/jitu.jpeg" style="width:50px;height:50px; border-radius:50%; object-fit:cover;"></td>
+                            <td>EMP004</td>
+                            <td>Jitumoni Das</td>
+                            <td>Design and Development</td>
+                            <td>.</td>
+                            <td>jdas3484@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/pri.jpeg" style="width:50px;height:50px; border-radius:50%; object-fit:cover;"></td>
+                            <td>EMP005</td>
+                            <td>Priyanshu Kumar</td>
+                            <td>DTP Operator</td>
+                            <td>8133869784</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/amar.jpeg" style="width:50px;height:50px; border-radius:50%; object-fit:cover;"></td>
+                            <td>EMP006</td>
+                            <td>Amarjyoti Thakuria</td>
+                            <td>DTP Operator</td>
+                            <td>9365175683</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DOWNLOADS SECTION RESTORED -->
+<section id="downloads">
+    <h2 class="title">Downloads</h2>
+        <div class="download-item">
+            <i class="fas fa-file-invoice-dollar main-icon"></i>
+            <h3>Service Price List</h3>
+            <p>Download the latest service charges.</p>
+            <div class="download-links">
+                <a href="#"><i class="fas fa-eye"></i> View</a>
+                <a href="#"><i class="fas fa-download"></i> Download</a>
+            </div>
+        </div>
+        <div class="download-item">
+            <i class="fas fa-user-plus main-icon"></i>
+            <h3>Admission Form</h3>
+            <p>Download the admission form and submit it at the centre.</p>
+            <div class="download-links">
+                <a href="#"><i class="fas fa-eye"></i> View</a>
+                <a href="#"><i class="fas fa-download"></i> Download</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="gallery">
 <h2 class="title">Gallery</h2>
 <div class="gallery">
@@ -550,204 +936,48 @@ Address: Ahmed Market, Near Govt. Ayurvedic College, AEC Road, Jalukbari, Guwaha
 <img src="images/form.jpeg" alt="Form Gallery">
 </div>
 </section>
-    <section id="employee">
-
-<h2 class="title">Employee Directory</h2>
-
-<input
-type="text"
-id="employeeSearch"
-class="employee-search"
-placeholder="Search Employee..."
-onkeyup="searchEmployee()">
-
-<table class="employee-table" id="employeeTable">
-
-<thead>
-
-<tr>
-
-<th>Employee ID</th>
-<th>Name</th>
-<th>Designation</th>
-<th>Mobile</th>
-<th>email</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-<td>EMP001</td>
-<td>Latika Baishya</td>
-<td>Proprietor</td>
-<td>9864944414</td>
-    <td>.</td>
-</tr>
-
-<tr>
-<td>EMP002</td>
-<td>Dipanjali Kumari</td>
-<td>DTP Operator</td>
-<td>8099646022</td>
-<td>.</td>
-</tr>
-
-<tr>
-<td>EMP003</td>
-<td>Pritam Das</td>
-<td>Receiption cum Management</td></td>
-<td></td>
-<td>pd398027@gmail.com</td>
-</tr>
-    <tr>
-<td>EMP004</td>
-<td>Jitumoni Das</td>
-<td>Design and Development</td></td>
-<td>.</td>
-<td>jdas3484@gmail.com</td>
-</tr>
-    <tr>
-<td>EMP005</td>
-<td>Priyanshu Kumar</td>
-<td>DTP Operator</td></td>
-<td>8133869784</td>
-<td>.</td>
-</tr>
-    <tr>
-<td>EMP006</td>
-<td>Amarjyoti Thakuria</td>
-<td>DTP Operator</td></td>
-<td>9365175683</td>
-<td></td>
-</tr>
-
-
-</tbody>
-
-</table>
-
-<div class="download-area">
-
-
-<a href="pdf/price.pdf" target="_blank">
-<i class="fas fa-file-pdf"></i>
-Price List PDF
-</a>
-
-</div>
-        <section id="downloads">
-<h2 class="title">Downloads</h2>
-
-<div class="downloads">
-
-    <!-- Employee List -->
-    <div class="download-card">
-        <i class="fas fa-users"></i>
-        <h3>Employee List</h3>
-        <p>View or download the latest employee list.</p>
-
-        <div class="download-buttons">
-            <a href="pdf/employeelist.pdf" target="_blank" class="download-btn">
-                <i class="fas fa-eye"></i> View
-            </a>
-
-            <a href="pdf/employeelist.pdf" download class="download-btn">
-                <i class="fas fa-download"></i> Download
-            </a>
-        </div>
-    </div>
-
-    <!-- Price List -->
-    <div class="download-card">
-        <i class="fas fa-file-invoice-dollar"></i>
-        <h3>Service Price List</h3>
-        <p>Download the latest service charges.</p>
-
-        <div class="download-buttons">
-            <a href="pdf/price.pdf" target="_blank" class="download-btn">
-                <i class="fas fa-eye"></i> View
-            </a>
-
-            <a href="pdf/price.pdf" download class="download-btn">
-                <i class="fas fa-download"></i> Download
-            </a>
-        </div>
-    </div>
-
-    <!-- Admission Form -->
-    <div class="download-card">
-        <i class="fas fa-user-plus"></i>
-        <h3>Admission Form</h3>
-        <p>Download the admission form and submit it at the centre.</p>
-
-        <div class="download-buttons">
-            <a href="pdf/form.pdf" target="_blank" class="download-btn">
-                <i class="fas fa-eye"></i> View
-            </a>
-
-            <a href="pdf/form.pdf" download class="download-btn">
-                <i class="fas fa-download"></i> Download
-            </a>
-        </div>
-    </div>
-
-</div>
-</section>
-
-</section>
 
 <section id="contact">
 <h2 class="title">Contact Us</h2>
 <div class="contact">
+<div class="contact-info">
+    <h3>Matu Computer Centre</h3>
+    <p>
+        Ahmed Market<br>
+        Near Govt. Ayurvedic College<br>
+        AEC Road<br>
+        Jalukbari<br>
+        Guwahati-781014
+    </p>
+    <br>
+    <p><i class="fas fa-phone" style="color: #0d47a1;"></i> <b>Phone Number:</b> 8638835058, 8876221060</p>
+    <p><i class="fab fa-whatsapp" style="color: #25D366;"></i> <b>WhatsApp Number:</b> 7099936966</p>
+    <p><i class="fab fa-instagram" style="color: #E1306C;"></i> <b>Instagram:</b> <a href="https://instagram.com/matu_computer_centre" target="_blank" style="text-decoration:none; color:#333;">@matu_computer_centre</a></p>
+    <br>
+    <p><i class="fas fa-clock" style="color: #0d47a1;"></i> <b>Opening Hours</b><br>9:00 AM - 9:00 PM</p>
+</div>
+
 <div>
-<h3>Matu Computer Centre</h3>
-<p>
-Ahmed Market<br>
-Near Govt. Ayurvedic College<br>
-AEC Road<br>
-Jalukbari<br>
-Guwahati-781014
-</p>
-<br>
-
-<!-- Clickable Phone and WhatsApp with Icons -->
-<p>
-    <b><i class="fas fa-phone-alt" style="color: #0d47a1; margin-right: 5px;"></i> Phone Number:</b> 
-    <a href="tel:+918638835058" style="text-decoration: none; color: #333; font-weight: bold;">8638835058</a>
-</p>
-<p>
-    <b><i class="fab fa-whatsapp" style="color: #25D366; margin-right: 5px; font-size: 18px;"></i> WhatsApp Number:</b> 
-    <a href="https://wa.me/917099936966" target="_blank" style="text-decoration: none; color: #333; font-weight: bold;">7099936966</a>
-</p>
-<br>
-
-<p>
-<b><i class="fas fa-clock" style="color: #0d47a1; margin-right: 5px;"></i> Opening Hours</b><br>
-9:00 AM - 9:00 PM
-</p>
+    <form action="https://formsubmit.co/djitumoni075@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+    <a href="https://wa.me/917099936966" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+    </a>
 </div>
-
-<form action="https://formsubmit.co/matucentre07@gmail.com" method="POST">
-
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New Website Enquiry">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://matucentre07-create.github.io/Matu-centre/">
-
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="phone" placeholder="Phone Number" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-
-    <button type="submit">Send Message</button>
-    <button type="button" onclick="sendWhatsApp()" style="margin-top:10px;background:#25D366;color:white;padding:15px;width:100%;border:none;border-radius:5px;font-size:18px;cursor:pointer;">
-    <i class="fab fa-whatsapp"></i> Send via WhatsApp
-</button>
-</form>
 </div>
+</section>
+
+<!-- Feedback Section -->
+<section id="feedback" class="feedback-section">
+    <h2 class="title" style="margin-bottom: 15px;">We Value Your Feedback</h2>
+    <p style="margin-bottom: 25px; font-size: 18px;">Please let us know how we can improve our services and your experience at Matu Computer Centre.</p>
+    <a href="mailto:djitumoni075@gmail.com?subject=Feedback for Matu Computer Centre" class="btn" style="display: inline-block;">Give Feedback</a>
 </section>
 
 <footer>
@@ -756,65 +986,71 @@ Guwahati-781014
 <br>
 <p>© 2026 Matu Computer Centre. All Rights Reserved.</p>
 </footer>
-    <script>
-function sendWhatsApp() {
-    let name = document.querySelector('input[name="name"]').value;
-    let email = document.querySelector('input[name="email"]').value;
-    let phone = document.querySelector('input[name="phone"]').value;
-    let message = document.querySelector('textarea[name="message"]').value;
 
-    let text =
-`*New Enquiry from Website*
+<!-- JavaScript -->
+<script>
+    // SECURITY: Keyboard Shortcuts Disable karne ke liye
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'PrintScreen') {
+            navigator.clipboard.writeText('');
+            alert('Screenshots and saving are disabled on this page.');
+            e.preventDefault();
+        }
+        if (e.ctrlKey && (e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P' || e.key === 'u' || e.key === 'U')) {
+            e.preventDefault();
+            alert('This action is strictly disabled.');
+        }
+        if (e.key === 'F12') {
+            e.preventDefault();
+            alert('Developer tools are disabled.');
+        }
+    });
 
-👤 Name: ${name}
-📧 Email: ${email}
-📱 Phone: ${phone}
+    // Dark Mode Toggle Switch Logic
+    const toggleSwitch = document.querySelector('#darkModeSwitch');
+    const body = document.body;
 
-📝 Message:
-${message}`;
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        toggleSwitch.checked = true;
+    }
 
-    let url = "https://wa.me/917099936966?text=" + encodeURIComponent(text);
-    window.open(url, "_blank");
-}
-</script>
-    <script>
+    toggleSwitch.addEventListener('change', function(e) {
+        if (e.target.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
 
-function searchEmployee(){
+    // Show/Hide Employee Directory
+    document.getElementById('toggleDirectoryBtn').addEventListener('click', function() {
+        let directory = document.getElementById('directorySection');
+        if (directory.style.display === 'none' || directory.style.display === '') {
+            directory.style.display = 'block';
+            this.innerText = 'Hide Employee List';
+        } else {
+            directory.style.display = 'none';
+            this.innerText = 'Show Employee List';
+        }
+    });
 
-let input=document.getElementById("employeeSearch");
+    // Employee Search Filter
+    document.getElementById('searchEmployee').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let rows = document.querySelectorAll('#employeeList tr');
 
-let filter=input.value.toUpperCase();
-
-let table=document.getElementById("employeeTable");
-
-let tr=table.getElementsByTagName("tr");
-
-for(let i=1;i<tr.length;i++){
-
-let td=tr[i].getElementsByTagName("td")[1];
-
-if(td){
-
-let txt=td.textContent||td.innerText;
-
-if(txt.toUpperCase().indexOf(filter)>-1){
-
-tr[i].style.display="";
-
-}
-
-else{
-
-tr[i].style.display="none";
-
-}
-
-}
-
-}
-
-}
-
+        rows.forEach(row => {
+            let text = row.innerText.toLowerCase();
+            if(text.includes(filter)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
 </script>
 
 </body>
